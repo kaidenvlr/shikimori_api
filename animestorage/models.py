@@ -2,7 +2,9 @@ from django.db import models
 
 
 class Genre(models.Model):
-    title = models.CharField(max_length=10, verbose_name='Название')
+    title = models.CharField(max_length=30, verbose_name='Название')
+    description = models.TextField(null=True, blank=True, verbose_name='Описание')
+    date_added = models.DateTimeField(auto_now=True, verbose_name='Дата добавления в базу')
 
     def __str__(self):
         return self.title
@@ -15,6 +17,7 @@ class Genre(models.Model):
 class AgeRating(models.Model):
     title = models.CharField(max_length=10, verbose_name='Название')
     description = models.CharField(max_length=400, verbose_name='Описание')
+    date_added = models.DateTimeField(auto_now=True, verbose_name='Дата добавления в базу')
 
     def __str__(self):
         return self.title
@@ -26,6 +29,7 @@ class AgeRating(models.Model):
 
 class Studio(models.Model):
     title = models.CharField(max_length=50, verbose_name='Название')
+    date_added = models.DateTimeField(auto_now=True, verbose_name='Дата добавления в базу')
 
     def __str__(self):
         return self.title
@@ -37,6 +41,7 @@ class Studio(models.Model):
 
 class Status(models.Model):
     title = models.CharField(max_length=20, verbose_name='Название')
+    date_added = models.DateTimeField(auto_now=True, verbose_name='Дата добавления в базу')
 
     def __str__(self):
         return self.title
@@ -48,6 +53,7 @@ class Status(models.Model):
 
 class AnimeType(models.Model):
     title = models.CharField(max_length=20, verbose_name='Название')
+    date_added = models.DateTimeField(auto_now=True, verbose_name='Дата добавления в базу')
 
     def __str__(self):
         return self.title
@@ -66,7 +72,9 @@ class Anime(models.Model):
     type = models.ForeignKey(AnimeType, on_delete=models.CASCADE, verbose_name='Тип')
     genre = models.ManyToManyField(Genre, verbose_name='Жанры')
     poster = models.ImageField(verbose_name='Постер')
-    status = models.ForeignKey(Status, verbose_name='Статус')
+    status = models.ForeignKey(Status, on_delete=models.CASCADE, verbose_name='Статус')
+    release_year = models.PositiveSmallIntegerField(verbose_name='Год выпуска', default=0)
+    date_added = models.DateTimeField(auto_now=True, verbose_name='Дата добавления в базу')
 
     def __str__(self):
         return self.title
