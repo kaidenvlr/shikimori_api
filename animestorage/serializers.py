@@ -3,7 +3,7 @@ from rest_framework import serializers
 from animestorage.models import Genre, Studio, Status, AnimeType, Anime, AgeRating
 
 
-class GenreSerializer(serializers.Serializer):
+class GenreSerializer(serializers.ModelSerializer):
     class Meta:
         model = Genre
         fields = ['id', 'title', 'description', 'date_added']
