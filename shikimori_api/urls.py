@@ -13,12 +13,15 @@ urlpatterns = [
     # animestorage
 
     # anime
-    path('api/v1/anime/', views.AnimeAPIList.as_view()),
+    path('api/v1/anime/', views.AnimeAPIListCreate.as_view()),
     path('api/v1/anime/<int:pk>/', views.AnimeAPIRetrieveUpdateDestroy.as_view()),
     # anime type
-    path('api/v1/animetype/', views.AnimeTypeAPIList.as_view()),
+    path('api/v1/animetype/', views.AnimeTypeAPIListCreate.as_view()),
     path('api/v1/animetype/<int:pk>/', views.AnimeTypeAPIRetrieveUpdateDestroy.as_view()),
+    # status
+    path('api/v1/status/', views.StatusAPIListCreate.as_view()),
+    path('api/v1/status/<int:pk>/', views.StatusAPIRetrieveUpdateDestroy.as_view()),
 
     # userstorage
-    
+
 ]
