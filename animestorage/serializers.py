@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from animestorage.models import Genre, Studio, Status, AnimeType, Anime
+from animestorage.models import Genre, Studio, Status, AnimeType, Anime, AgeRating
 
 
 class GenreSerializer(serializers.Serializer):
@@ -13,6 +13,12 @@ class StudioSerializer(serializers.ModelSerializer):
     class Meta:
         model = Studio
         fields = ['id', 'title', 'date_added']
+
+
+class AgeRatingSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = AgeRating
+        fields = ['id', 'title', 'description', 'date_added']
 
 
 class StatusSerializer(serializers.ModelSerializer):
