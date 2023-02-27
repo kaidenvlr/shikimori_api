@@ -21,7 +21,9 @@ urlpatterns = [
     # status
     path('api/v1/status/', views.StatusAPIListCreate.as_view()),
     path('api/v1/status/<int:pk>/', views.StatusAPIRetrieveUpdateDestroy.as_view()),
-
+    # genre
+    path('api/v1/genre/', views.GenreAPIListCreate.as_view()),
+    path('api/v1/genre/<int:pk>/', views.GenreAPIRetrieveUpdateDestroy.as_view()),
     # userstorage
 
 ]
