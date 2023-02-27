@@ -24,6 +24,9 @@ urlpatterns = [
     # genre
     path('api/v1/genre/', views.GenreAPIListCreate.as_view()),
     path('api/v1/genre/<int:pk>/', views.GenreAPIRetrieveUpdateDestroy.as_view()),
+    # age rating
+    path('api/v1/age-rating/', views.AgeRatingAPIListCreate.as_view()),
+    path('api/v1/age-rating/<int:pk>/', views.AgeRatingAPIRetrieveUpdateDestroy.as_view()),
     # userstorage
 
 ]
