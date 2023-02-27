@@ -35,3 +35,21 @@ class StatusAPIListCreate(generics.ListCreateAPIView):
     queryset = models.Status.objects.all()
     serializer_class = serializers.StatusSerializer
     permission_classes = (IsAdminOrReadOnly,)
+
+
+class StatusAPIRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Status.objects.all()
+    serializer_class = serializers.StatusSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+
+
+class GenreAPIListCreate(generics.ListCreateAPIView):
+    queryset = models.Genre.objects.all()
+    serializer_class = serializers.GenreSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+
+
+class GenreAPIRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Genre.objects.all()
+    serializer_class = serializers.GenreSerializer
+    permission_classes = (IsAdminOrReadOnly,)
