@@ -71,7 +71,7 @@ class Anime(models.Model):
     studio = models.ForeignKey(Studio, on_delete=models.CASCADE, verbose_name='Студия')
     type = models.ForeignKey(AnimeType, on_delete=models.CASCADE, verbose_name='Тип')
     genre = models.ManyToManyField(Genre, verbose_name='Жанры')
-    poster = models.ImageField(verbose_name='Постер')
+    poster = models.ImageField(verbose_name='Постер', upload_to='poster/')
     status = models.ForeignKey(Status, on_delete=models.CASCADE, verbose_name='Статус')
     release_year = models.PositiveSmallIntegerField(verbose_name='Год выпуска', default=0)
     date_added = models.DateTimeField(auto_now=True, verbose_name='Дата добавления в базу')
