@@ -65,3 +65,15 @@ class AgeRatingAPIRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     queryset = models.AgeRating.objects.all()
     serializer_class = serializers.AgeRatingSerializer
     permission_classes = (IsAdminOrReadOnly,)
+
+
+class StudioAPIListCreate(generics.ListCreateAPIView):
+    queryset = models.Studio.objects.all()
+    serializer_class = serializers.StudioSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+
+
+class StudioAPIRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.Studio.objects.all()
+    serializer_class = serializers.StudioSerializer
+    permission_classes = (IsAdminOrReadOnly,)
