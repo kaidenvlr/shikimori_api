@@ -27,6 +27,10 @@ urlpatterns = [
     # age rating
     path('api/v1/age-rating/', views.AgeRatingAPIListCreate.as_view()),
     path('api/v1/age-rating/<int:pk>/', views.AgeRatingAPIRetrieveUpdateDestroy.as_view()),
+    # studio
+    path('api/v1/studio/', views.StudioAPIListCreate.as_view()),
+    path('api/v1/studio/<int:pk>/', views.StudioAPIRetrieveUpdateDestroy.as_view()),
+
     # userstorage
 
 ]
