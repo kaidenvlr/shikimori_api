@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # drf
     'rest_framework',
+    'rest_framework.authtoken',
     # my apps
     'animestorage',
 ]
@@ -101,7 +102,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
-]
+] if not DEBUG else []
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
